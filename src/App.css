@@ -1,0 +1,28 @@
+
+
+.drawer {
+  position: fixed; left: 0; right: 0;
+  bottom: calc(var(--bar-h) + env(safe-area-inset-bottom, 0px));
+  z-index: 45;
+  max-height: 70vh; overflow-y: auto;
+  background: var(--paper);
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -12px 40px rgb(60 30 45 / .15);
+  transform: translateY(calc(100% + var(--bar-h)));
+  visibility: hidden;
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1), visibility 0s .35s;
+}
+.drawer.is-open { transform: translateY(0); visibility: visible; transition: transform .35s cubic-bezier(.2, .8, .2, 1); }
+.drawer__inner {
+  max-width: 1080px; margin: 0 auto;
+  padding-block: 24px;
+  padding-left: max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 28px;
+}
+.drawer__inner > section { min-width: 0; }
+.mini-clocks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.mini-clocks button {
+  width: 100%; display: flex; justify-content: space-between; gap: 8px;
+  border: 0; border-radius: 12px; padding: 10px 12px; background: var(--bg); text-align: left;
+}
