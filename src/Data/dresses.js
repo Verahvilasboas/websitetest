@@ -19,7 +19,7 @@ export const colorOptions = [
   { name: 'Charcoal', hex: '#3b3b3b' },
   { name: 'Chocolate', hex: '#3d2a20' },
   { name: 'Grey', hex: '#5c5c5c' },
-  { name: 'Pink', hex: '#d36fc6' },
+  { name: 'Red', hex: '#e60e0e' },
 ];
 
 export const sizeOptions = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
