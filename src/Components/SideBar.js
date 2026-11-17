@@ -21,8 +21,9 @@ export default function Sidebar({
     // e os motores de busca percebem o que é a parte principal da página.
     <aside className="sidebar">
 
-      {/* Ícone do menu: dois <span> vazios que o CSS transforma em dois traços */}
+      {/* Ícone do menu: TRES <span> vazios que o CSS transforma em 3 traços */}
       <button className="menu-icon" aria-label="Menu">
+        <span />
         <span />
         <span />
       </button>
@@ -85,7 +86,7 @@ export default function Sidebar({
         <span>View</span>
         <div>
           {/* map sobre um array escrito na hora: [1, 2, 3] → três botões */}
-          {[1, 2, 3].map((n) => (
+          {[1, 2, 3, 4].map((n) => (
             <button
               key={n}
               className={view === n ? 'active' : ''}
