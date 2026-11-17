@@ -2,6 +2,7 @@
 
 export default function TopRight({ search, onSearch, bagCount, userName }) {
   return (
+//search
     <aside className="top-right">
       <input
         className="search"
@@ -11,11 +12,12 @@ export default function TopRight({ search, onSearch, bagCount, userName }) {
       />
 
       <div className="account">
+  <button>{userName}</button>
         <button>
           Bag <span className="bag-count">{bagCount}</span>
         </button>
-        <button>{userName}</button>
-        <button>Help</button>
+
+      
       </div>
     </aside>
   );
