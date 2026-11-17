@@ -1,0 +1,18 @@
+button {
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 128px;
+}
+.menu-icon span { display: block; height: 1.5px; background: #000; }

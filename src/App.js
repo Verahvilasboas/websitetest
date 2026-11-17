@@ -1,12 +1,11 @@
 
 import { useState, useEffect, useRef } from 'react';
-import './App.css';
-
-
+import ShopPage from './pages/ShopPage';
 
 export default function App() {
-  return (
-  "hello")
-}
-
-
+return (
+    <div className="App">
+      <ShopPage />
+    </div>
+  );
+} 
