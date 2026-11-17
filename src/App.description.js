@@ -34,12 +34,11 @@ loja-cra/
 // aparece o bloco de cor "bg" no lugar dela.
 
 
-
 Onde está cada método
-Método	Ficheiro	Para que serve
-filter	ShopPage.js	categoria, pesquisa, preço, cores, tamanhos, estilo
-map	ProductGrid.js, Sidebar.js, FilterPanel.js	desenhar cartões, categorias e opções
-find	ShopPage.js	ir buscar o vestido pelo id ao pôr no saco
-some	ShopPage.js	o vestido tem alguma cor/tamanho escolhido? há peças quase esgotadas?
-forEach	ShopPage.js	somar o total do saco
-sort	ShopPage.js	ordenar por preço ou novidades
+Método :	Ficheiro	Para que serve
+filter :	ShopPage.js	categoria, pesquisa, preço, cores, tamanhos, estilo
+map : ProductGrid.js, Sidebar.js, FilterPanel.js	desenhar cartões, categorias e opções
+find	: ShopPage.js	ir buscar o vestido pelo id ao pôr no saco
+some	: ShopPage.js	o vestido tem alguma cor/tamanho escolhido? há peças quase esgotadas?
+forEach	: ShopPage.js	somar o total do saco
+sort	:  ShopPage.js	ordenar por preço ou novidades
