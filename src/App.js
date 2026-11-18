@@ -2,6 +2,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
+import Footer from './Components/Footer';
  
 // App.js — decide que página mostrar consoante o endereço (URL).
 // BrowserRouter → liga o "GPS" do site
@@ -14,7 +15,9 @@ export default function App() {
         <Route path="/" element={<HomePage />} />        {/* localhost:3000/      */}
         <Route path="/loja" element={<ShopPage />} />    {/* localhost:3000/loja  */}
       </Routes>
+      <Footer />
     </BrowserRouter>
+
   );
 }
  

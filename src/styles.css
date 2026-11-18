@@ -513,3 +513,43 @@ ________
 
 
 }
+
+
+/* ---------- Footer ---------- */
+
+/* a página ocupa sempre o ecrã todo; o footer fica encostado ao fundo */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* o conteúdo de cada página estica para ocupar o espaço que sobra */
+.home,
+.shop {
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;     /* texto e link um por baixo do outro */
+  align-items: center;        /* centrados na horizontal */
+  gap: 8px;
+  padding: 24px 20px;
+  text-align: center;
+  border-top: 1px solid #000;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.footer p { margin: 0; }
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

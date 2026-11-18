@@ -146,5 +146,7 @@ export default function ShopPage() {
         resultCount={sortedDresses.length}
       />
     </div>
+
+
   );
 }
