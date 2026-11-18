@@ -77,7 +77,7 @@ Home · CSS
 
 // next page
 
-* { box-sizing: border-box; }
+ { box-sizing: border-box; }
 
 
 body {
@@ -85,10 +85,9 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 200;
   color: #343434;
-  background: #ffffff5d;
-background-image: url('https://i.pinimg.com/originals/48/3f/ee/483feef9f04bb72583b373dd9221bc8d.gif');
- background-size: 50%;
-background-repeat: no-repeat;
+  background-image: url(https://i.pinimg.com/originals/48/3f/ee/483feef9f04bb72583b373dd9221bc8d.gif);
+  background-size: 50%;
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   letter-spacing: 0.04em;
