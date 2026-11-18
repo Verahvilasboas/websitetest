@@ -4,9 +4,9 @@ Home · CSS
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;        /* centra na horizontal */
-  justify-content: center;    /* centra na vertical */
-  text-align: center;         /* centra o texto dentro de cada linha */
+  align-items: center;       
+  justify-content: center;   
+  text-align: center;        
   padding: 40px 20px; }
 
 
@@ -16,7 +16,7 @@ Home · CSS
   font-weight: 300;
   letter-spacing: 0.4em;
   text-transform: uppercase;
-  padding-left: 0.4em;        /* compensa o espaço que o letter-spacing deixa depois do último M */
+  padding-left: 0.4em;       
 }
 
 .home-subtitle {
@@ -25,7 +25,7 @@ Home · CSS
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #555;
-  padding-left: 0.2em;        /* a mesma compensação */
+  padding-left: 0.2em;      
 }
 
 .home-button {
@@ -82,7 +82,7 @@ Home · CSS
 
 body {
   margin: 0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 200;
   color: #343434;
   background-image: url(https://i.pinimg.com/originals/48/3f/ee/483feef9f04bb72583b373dd9221bc8d.gif);
@@ -113,7 +113,7 @@ button {
 
 /* ---------- Coluna esquerda ---------- */
 .sidebar {
-  position: sticky;
+  position:sticky;
   top: 0;
   height: 100vh;
   padding: 40px;
@@ -145,20 +145,20 @@ button {
   overflow: visible;
 }
 
-/* pétalas: só contorno, da cor do texto */
+
 .flower ellipse {
   fill: none;
   stroke: currentColor;
   stroke-width: 0.7;
-  /* a pétala cresce a partir da base (perto do centro da flor) */
+
   transform-box: fill-box;
   transform-origin: 50% 100%;
 }
 
-/* centro preenchido */
+
 .flower circle { fill: currentColor; }
 
-/* 1. RESPIRAR: as pétalas abrem e fecham, uma de cada vez */
+
 .flower.breathe ellipse {
   animation: breathe 2.4s ease-in-out infinite alternate;
   animation-delay: calc(var(--i) * 0.25s);
@@ -178,7 +178,7 @@ button {
   to { transform: rotate(360deg); }
 }
 
-/* 3. ABRIR AO PASSAR O RATO: fechada, abre quando passas por cima */
+
 .flower.bloom-hover ellipse {
   transform: scale(0.35);
   transition: transform 0.6s cubic-bezier(0.3, 1.4, 0.5, 1);
