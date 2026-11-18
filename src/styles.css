@@ -1,12 +1,98 @@
+Home · CSS
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* centra na horizontal */
+  justify-content: center;    /* centra na vertical */
+  text-align: center;         /* centra o texto dentro de cada linha */
+  padding: 40px 20px; }
+
+
+.home-title {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  padding-left: 0.4em;        /* compensa o espaço que o letter-spacing deixa depois do último M */
+}
+
+.home-subtitle {
+  margin: 16px 0 40px;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #555;
+  padding-left: 0.2em;        /* a mesma compensação */
+}
+
+.home-button {
+  padding: 18px 40px;
+  border: 1px solid #000;
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 13px;
+  transition: background 0.3s, color 0.3s;
+}
+.home-button:hover { background: #000; color: #fff; }
+
+
+ 
+.home-title {
+  margin: 24px 0 0;
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  padding: 16px;
+}
+ 
+.home-subtitle {
+  margin: 12px 0 40px;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #555;
+  padding: 24px;
+}
+ 
+.home-button {
+  margin-left: 24px;
+  padding: 24px;
+  border: 1px solid #000;
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 13px;
+  transition: background 0.3s, color 0.3s;
+
+
+}
+.home-button:hover { background: #000; color: #fff; }
+
+// next page
+
 * { box-sizing: border-box; }
+
 
 body {
   margin: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 200;
   color: #343434;
-  background: #fff;
+  background: #ffffff5d;
+background-image: url('https://i.pinimg.com/originals/48/3f/ee/483feef9f04bb72583b373dd9221bc8d.gif');
+ background-size: 50%;
+background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   letter-spacing: 0.04em;
+
 }
 
 button {
@@ -34,6 +120,90 @@ button {
   padding: 40px;
   display: flex;
   flex-direction: column;
+}
+
+
+/* menu e flor lado a lado */
+.menu-row {
+  display: flex;          /* põe os filhos em linha */
+  align-items: center;    /* alinhados ao meio, na vertical */
+  gap: 20px;
+}
+
+
+.logo {
+  color: inherit;
+  display: flex;
+  flex-direction: row;    /* em linha: o padrão, mas assim fica explícito */
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.flower {
+  width: 52px;   /* tamanho da flor: muda aqui */
+  height: 52px;
+  overflow: visible;
+}
+
+/* pétalas: só contorno, da cor do texto */
+.flower ellipse {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.7;
+  /* a pétala cresce a partir da base (perto do centro da flor) */
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+/* centro preenchido */
+.flower circle { fill: currentColor; }
+
+/* 1. RESPIRAR: as pétalas abrem e fecham, uma de cada vez */
+.flower.breathe ellipse {
+  animation: breathe 2.4s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i) * 0.25s);
+}
+@keyframes breathe {
+  from { transform: scale(0.7); }
+  to   { transform: scale(1); }
+}
+
+/* 2. GIRAR: a flor roda devagar */
+.flower.spin .petals {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin 14s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 3. ABRIR AO PASSAR O RATO: fechada, abre quando passas por cima */
+.flower.bloom-hover ellipse {
+  transform: scale(0.35);
+  transition: transform 0.6s cubic-bezier(0.3, 1.4, 0.5, 1);
+  transition-delay: calc(var(--i) * 0.06s);
+}
+.logo:hover .flower.bloom-hover ellipse { transform: scale(1); }
+
+/* quem pediu ao computador menos animações vê a flor parada */
+@media (prefers-reduced-motion: reduce) {
+  .flower ellipse, .flower .petals { animation: none !important; transition: none !important; }
+}
+
+/* no telemóvel, o menu-row fica ao lado das categorias */
+@media (max-width: 700px) {
+  .menu-row { padding-top: 12px; }
+  .flower { width: 32px; height: 32px; }
+}
+________
+
+/* fora do @media: vale para todos os tamanhos */
+.menu-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .menu-icon {
@@ -331,4 +501,15 @@ button {
     padding: 16px 0;
     justify-content: space-between;
   }
+}
+
+@media (max-width: 700px) {
+
+  /* telemóvel: o menu fica escondido, mas a flor continua visível */
+  .menu-row { display: flex; padding: 12px 0; }
+  .logo { display: flex; }
+.menu-icon { display: flex; }
+
+
+
 }

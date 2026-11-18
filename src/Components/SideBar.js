@@ -20,15 +20,33 @@ export default function Sidebar({
     // Isso ajuda quem navega por teclado ou voz a saltar diretamente para lá,
     // e os motores de busca percebem o que é a parte principal da página.
     <aside className="sidebar">
+  <div className="menu-row">
 
-      {/* Ícone do menu: TRES <span> vazios que o CSS transforma em 3 traços */}
-      <button className="menu-icon" aria-label="Menu">
-        <span />
-        <span />
-        <span />
-      </button>
+  <button className="menu-icon" aria-label="Menu">
+          <span />
+          <span />
+          <span />
+        </button>
 
-      {/* A classe "categories" no CSS põe os botões em coluna e com espaço entre eles */}
+  <a href="/" className="logo" aria-label="Página inicial">
+          <svg className="flower breathe" viewBox="-12 -12 24 24" aria-hidden="true">
+            <g className="petals">
+              {[0, 72, 144, 216, 288].map((angle, i) => (
+                <g key={angle} transform={`rotate(${angle})`}>
+                  <ellipse style={{ '--i': i }} cx="0" cy="-6" rx="3" ry="5.5" />
+                </g>
+              ))}
+            </g>
+            <circle r="1.6" />
+          </svg>
+  <span className="logo-name">Bloom</span>
+        </a>
+ 
+
+</div>
+
+
+
       <nav className="categories">
 
         {/*
@@ -86,7 +104,7 @@ export default function Sidebar({
         <span>View</span>
         <div>
           {/* map sobre um array escrito na hora: [1, 2, 3] → três botões */}
-          {[1, 2, 3, 4].map((n) => (
+          {[1, 2, 3].map((n) => (
             <button
               key={n}
               className={view === n ? 'active' : ''}
