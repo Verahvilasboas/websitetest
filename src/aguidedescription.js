@@ -17,6 +17,7 @@ loja-cra/
     App.js
     styles.css
     pages/
+      HomePage.js
       ShopPage.js
     components/
       Sidebar.js
@@ -29,13 +30,13 @@ loja-cra/
 ```
 
 
-// FOTOS: por as imagens na pasta public/images com estes nomes
+// FOTOS: por as imagens na pasta public/images com estes nomes de exemplo:
+
 // (paris.jpg, london.jpg, ...). Se uma foto não existir,
-// aparece o bloco de cor "bg" no lugar dela.
+// aparece o bloco de cor "bg" no lugar dela. prevalece o valor de cor que colocar no ... bg: 
 
 
-// Onde está cada método
-// Método 	Ficheiro	Para que serve
+
 //filter 	ShopPage.js	categoria, pesquisa, preço, cores, tamanhos, estilo
 //map  ProductGrid.js, Sidebar.js, FilterPanel.js	desenhar cartões, categorias e opções
 //find	 ShopPage.js	ir buscar o vestido pelo id ao pôr no saco
