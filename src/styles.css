@@ -1,15 +1,17 @@
-Home · CSS
 
+Styles · CSS
+/* ---------- Página inicial ---------- */
+ 
 .home {
-  min-height: 100vh;
+  min-height: auto;   /* o footer trata de encher o ecrã (ver #root) */
   display: flex;
   flex-direction: column;
   align-items: center;       
   justify-content: center;   
   text-align: center;        
   padding: 40px 20px; }
-
-
+ 
+ 
 .home-title {
   margin: 0;
   font-size: 48px;
@@ -18,7 +20,7 @@ Home · CSS
   text-transform: uppercase;
   padding-left: 0.4em;       
 }
-
+ 
 .home-subtitle {
   margin: 16px 0 40px;
   font-size: 14px;
@@ -27,7 +29,7 @@ Home · CSS
   color: #555;
   padding-left: 0.2em;      
 }
-
+ 
 .home-button {
   padding: 18px 40px;
   border: 1px solid #000;
@@ -39,60 +41,27 @@ Home · CSS
   transition: background 0.3s, color 0.3s;
 }
 .home-button:hover { background: #000; color: #fff; }
-
  
-.home-title {
-  margin: 24px 0 0;
-  font-size: 48px;
-  font-weight: 300;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  padding: 16px;
-}
  
-.home-subtitle {
-  margin: 12px 0 40px;
-  font-size: 14px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #555;
-  padding: 24px;
-}
+/* ---------- Loja ---------- */
  
-.home-button {
-  margin-left: 24px;
-  padding: 24px;
-  border: 1px solid #000;
-  color: inherit;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 13px;
-  transition: background 0.3s, color 0.3s;
-
-
-}
-.home-button:hover { background: #000; color: #fff; }
-
-// next page
-
- { box-sizing: border-box; }
-
-
+* { box-sizing: border-box; }
+ 
+ 
 body {
   margin: 0;
   font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 200;
   color: #343434;
-  background-image: url(https://i.pinimg.com/originals/48/3f/ee/483feef9f04bb72583b373dd9221bc8d.gif);
+  background-image: url('https://i.pinimg.com/originals/48/3f/ee/483feef9f04bb72583b373dd9221bc8d.gif');
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   letter-spacing: 0.04em;
-
+ 
 }
-
+ 
 button {
   font: inherit; 
   letter-spacing: inherit;
@@ -103,13 +72,13 @@ button {
   color: inherit;
   cursor: pointer;
 }
-
+ 
 .shop {
   display: grid;
   grid-template-columns: 400px 1fr 260px;
   min-height: 100vh;
 }
-
+ 
 /* ---------- Coluna esquerda ---------- */
 .sidebar {
   position:sticky;
@@ -119,16 +88,16 @@ button {
   display: flex;
   flex-direction: column;
 }
-
-
+ 
+ 
 /* menu e flor lado a lado */
 .menu-row {
   display: flex;          /* põe os filhos em linha */
   align-items: center;    /* alinhados ao meio, na vertical */
   gap: 20px;
 }
-
-
+ 
+ 
 .logo {
   color: inherit;
   display: flex;
@@ -137,27 +106,27 @@ button {
   gap: 12px;
   text-decoration: none;
 }
-
+ 
 .flower {
   width: 52px;   /* tamanho da flor: muda aqui */
   height: 52px;
   overflow: visible;
 }
-
-
+ 
+ 
 .flower ellipse {
   fill: none;
   stroke: currentColor;
   stroke-width: 0.7;
-
+ 
   transform-box: fill-box;
   transform-origin: 50% 100%;
 }
-
-
+ 
+ 
 .flower circle { fill: currentColor; }
-
-
+ 
+ 
 .flower.breathe ellipse {
   animation: breathe 2.4s ease-in-out infinite alternate;
   animation-delay: calc(var(--i) * 0.25s);
@@ -166,7 +135,7 @@ button {
   from { transform: scale(0.7); }
   to   { transform: scale(1); }
 }
-
+ 
 /* 2. GIRAR: a flor roda devagar */
 .flower.spin .petals {
   transform-box: fill-box;
@@ -176,34 +145,33 @@ button {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
-
-
+ 
+ 
 .flower.bloom-hover ellipse {
   transform: scale(0.35);
   transition: transform 0.6s cubic-bezier(0.3, 1.4, 0.5, 1);
   transition-delay: calc(var(--i) * 0.06s);
 }
 .logo:hover .flower.bloom-hover ellipse { transform: scale(1); }
-
+ 
 /* quem pediu ao computador menos animações vê a flor parada */
 @media (prefers-reduced-motion: reduce) {
   .flower ellipse, .flower .petals { animation: none !important; transition: none !important; }
 }
-
+ 
 /* no telemóvel, o menu-row fica ao lado das categorias */
 @media (max-width: 700px) {
   .menu-row { padding-top: 12px; }
   .flower { width: 32px; height: 32px; }
 }
-________
-
+ 
 /* fora do @media: vale para todos os tamanhos */
 .menu-row {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-
+ 
 .menu-icon {
   display: flex;
   flex-direction: column;
@@ -211,7 +179,7 @@ ________
   width: 28px;
 }
 .menu-icon span { display: block; height: 2px; background: #000; }
-
+ 
 .categories {
   margin-top: 220px;
   display: flex;
@@ -223,16 +191,16 @@ ________
 .category { white-space: nowrap; text-align: left; }
 .category .num { margin-right: 14px; }
 .category.active { font-weight: 500; letter-spacing: 0.1em; }
-
+ 
 .link { font-size: 22px; }
 .categories .link:first-of-type { margin-top: 38px; }
-
+ 
 .view { margin-top: auto; font-size: 22px; }
 .view span { display: block; margin: 0 0 30px 16px; text-transform: uppercase; }
 .view div { display: flex; gap: 36px; padding-left: 16px; }
 .view button { font-weight: 300; }
 .view button.active { font-weight: 500; }
-
+ 
 /* ---------- Coluna direita ---------- */
 .top-right {
   position: sticky;
@@ -243,7 +211,7 @@ ________
   flex-direction: column;
   align-items: flex-end;
 }
-
+ 
 .search {
   width: 140px;
   border: none;
@@ -257,7 +225,7 @@ ________
   outline: none;
 }
 .search::placeholder { color: #000; }
-
+ 
 .account {
   margin-top: 110px;
   display: flex;
@@ -272,13 +240,13 @@ ________
   padding: 0 8px;
   border-left: 1px solid #5d5c5c;
   border-right: 1px solid #585858;
-
+ 
   font-size: 18px;
 }
-
+ 
 /* ---------- Conteúdo ---------- */
 .content { padding: 140px 0 120px; }
-
+ 
 .status {
   display: flex;
   gap: 32px;
@@ -287,18 +255,18 @@ ________
   color: #555;
   margin-bottom: 24px;
 }
-
+ 
 .grid { display: grid; column-gap: 42px; row-gap: 160px; }
 .grid.view-1 { grid-template-columns: 1fr; max-width: 800px; margin: 0 auto; }
 .grid.view-2 { grid-template-columns: repeat(2, 1fr); }
 .grid.view-3 { grid-template-columns: repeat(4, 1fr); column-gap: 32px; row-gap: 100px; }
-
+ 
 .card-image {
   aspect-ratio: 2 / 3;
   overflow: hidden;
 }
 .card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
+ 
 .card-info {
   display: flex;
   justify-content: space-between;
@@ -316,41 +284,31 @@ ________
   text-overflow: ellipsis;
 }
 .card-text { min-width: 0; }
-
+ 
 .add { font-size: 28px; line-height: 0.6; margin-left: 12px; }
 .add:disabled { opacity: 0.3; cursor: not-allowed; }
-
+ 
 .swatches { display: flex; gap: 10px; margin-top: 16px; }
 .swatches span { width: 16px; height: 16px; border: 1px solid #ccc; }
-
+ 
 .empty { text-transform: uppercase; text-align: center; margin-top: 120px; }
-
-/* ---------- Ecrãs pequenos ---------- */
-@media (max-width: 1100px) {
-  .shop { grid-template-columns: 1fr; }
-  .sidebar, .top-right { position: static; height: auto; padding: 24px; }
-  .categories, .account { margin-top: 32px; }
-  .view { margin-top: 32px; }
-  .content { padding: 24px; }
-  .grid.view-3 { grid-template-columns: repeat(2, 1fr); }
-}
-
+ 
 /* ---------- Painel de filtros ---------- */
 /* a sidebar fica por cima do painel, para o botão FILTERS continuar visível */
 .sidebar { z-index: 20; }
-
+ 
 .filters-btn.open { font-weight: 500; }
-
+ 
 .filter-overlay {
   position: fixed;
   inset: 0;
   z-index: 10;
 }
-
+ 
 .filter-panel {
   position: absolute;
   top: 0;
-  left: 300px;
+  left: 400px;   /* = largura da coluna esquerda (.shop) */
   right: 260px;
   bottom: 0;
   background: #fff;
@@ -358,12 +316,12 @@ ________
   overflow-y: auto;
   animation: fade-in 0.2s ease-out;
 }
-
+ 
 @keyframes fade-in {
   from { opacity: 0; transform: translateX(-12px); }
   to { opacity: 1; transform: translateX(0); }
 }
-
+ 
 .filter-group {
   display: flex;
   flex-direction: column;
@@ -371,14 +329,14 @@ ________
   gap: 24px;
   margin-bottom: 64px;
 }
-
+ 
 .f-item { font-size: 18px; text-align: left; }
 .f-item.active { text-decoration: underline; text-underline-offset: 6px; }
-
+ 
 .f-color { display: flex; align-items: center; gap: 24px; }
 .swatch { width: 18px; height: 18px; border: 1px solid #ddd; }
 .f-color.active .swatch { outline: 1px solid #000; outline-offset: 2px; }
-
+ 
 /* barra de preço com dois pontos (dois inputs range sobrepostos) */
 .range { position: relative; width: 100%; height: 20px; }
 .range-track, .range-fill {
@@ -399,13 +357,13 @@ ________
   width: 16px; height: 16px; border-radius: 50%; background: #000; border: none;
 }
 .range-label { font-size: 18px; margin: 0; }
-
+ 
 .filter-actions { display: flex; gap: 48px; }
 .view-results { font-weight: 500; }
-
+ 
 /* botão de fechar do painel: só aparece em ecrãs pequenos */
 .filter-close { display: none; }
-
+ 
 /* ---------- Ecrãs médios (tablet) ---------- */
 @media (max-width: 1100px) {
   .shop { grid-template-columns: 220px 1fr; }
@@ -427,11 +385,11 @@ ________
   .view { font-size: 16px; }
   .content { padding: 24px 32px 80px 0; }
   .grid.view-3, .grid.view-4 { grid-template-columns: repeat(3, 1fr); }
-
+ 
   /* o painel abre ao lado do menu e por baixo da barra de cima */
   .filter-panel { left: 220px; right: 0; top: 90px; padding-top: 24px; }
 }
-
+ 
 /* ---------- Telemóvel ---------- */
 @media (max-width: 700px) {
   /* coluna única; order: -1 põe a pesquisa e o saco no topo */
@@ -445,7 +403,7 @@ ________
   }
   .top-right .search { grid-column: 1 / -1; grid-row: 2; width: 100%; text-align: left; }
   .account { gap: 20px; font-size: 14px; }
-
+ 
   /* categorias numa linha que desliza para o lado */
   .sidebar { position: static; height: auto; padding: 0 20px; z-index: auto; }
   .menu-icon { display: none; }
@@ -465,13 +423,13 @@ ________
   .category .num { margin-right: 6px; }
   .link { font-size: 14px; white-space: nowrap; }
   .categories .link:first-of-type { margin-top: 0; }
-
+ 
   /* vista: no telemóvel só a 1 e a 2 fazem sentido, por isso escondemos a 3 e a 4 */
   .view { display: flex; align-items: center; gap: 16px; margin: 16px 0 0; font-size: 14px; }
   .view span { margin: 0; }
   .view div { gap: 20px; padding: 0; }
   .view div button:nth-child(n + 3) { display: none; }
-
+ 
   .content { padding: 16px 20px 60px; }
   .status { flex-wrap: wrap; gap: 8px 20px; font-size: 11px; }
   .grid { column-gap: 12px; row-gap: 40px; }
@@ -479,7 +437,7 @@ ________
   .grid.view-2, .grid.view-3, .grid.view-4 { grid-template-columns: repeat(2, 1fr); }
   .card-text p { font-size: 12px; margin-bottom: 4px; }
   .add { font-size: 22px; }
-
+ 
   /* filtros: ecrã inteiro, por cima de tudo, com botão de fechar */
   .filter-overlay { z-index: 50; }
   .filter-panel { left: 0; right: 0; top: 0; padding: 64px 24px 32px; }
@@ -500,34 +458,34 @@ ________
     justify-content: space-between;
   }
 }
-
+ 
 @media (max-width: 700px) {
-
+ 
   /* telemóvel: o menu fica escondido, mas a flor continua visível */
   .menu-row { display: flex; padding: 12px 0; }
   .logo { display: flex; }
 .menu-icon { display: flex; }
-
-
-
+ 
+ 
+ 
 }
-
-
+ 
+ 
 /* ---------- Footer ---------- */
-
+ 
 /* a página ocupa sempre o ecrã todo; o footer fica encostado ao fundo */
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
+ 
 /* o conteúdo de cada página estica para ocupar o espaço que sobra */
 .home,
 .shop {
   flex: 1;
 }
-
+ 
 .footer {
   display: flex;
   flex-direction: column;     /* texto e link um por baixo do outro */
@@ -540,9 +498,9 @@ ________
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
-
+ 
 .footer p { margin: 0; }
-
+ 
 .footer a {
   color: inherit;
   text-decoration: none;
