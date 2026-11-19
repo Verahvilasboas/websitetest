@@ -27,10 +27,9 @@ export const styleOptions = ['Basic', 'Party', 'Knitwear'];
 export const dresses = [
   { id: 1, name: 'Dress paris', price: 100, stock: 8, isNew: true, categories: ['midi', 'satin'], sizes: ['XS','S','M'], style: 'Party', colors: ['#a7a7a7', '#111111'], image: '/images/paris.jpg', bg: '#8e1c26' },
   { id: 2, name: 'Dress london', price: 200, stock: 2, isNew: false, categories: ['mini'], sizes: ['S','M','L','XL'], style: 'Basic', colors: ['#111111', '#3b3b3b'], image: '/images/london.jpg', bg: '#1d1d1d' },
-
-  { id: 4, name: 'Dress tokyo', price: 400, stock: 1, isNew: false, categories: ['jumpsuit'], sizes: ['XS','S'], style: 'Party', colors: ['#111111'], image: '/images/tokyo.jpg', bg: '#2a2a2a' },
-  { id: 5, name: 'Dress dubai', price: 500, stock: 10, isNew: true, categories: ['midi', 'satin'], sizes: ['S','M','L','XL','XXL'], style: 'Party', colors: ['#c9b9a3', '#7a1420'], image: '/images/dubai.jpg', bg: '#cbbba5' },
-  { id: 6, name: 'Dress milano', price: 150, stock: 3, isNew: false, categories: ['mini', 'second'], sizes: ['M','L','XL'], style: 'Knitwear', colors: ['#5c5c5c', '#111111'], image: '/images/milano.jpg', bg: '#5c5c5c' },
+  { id: 4, name: 'Dress tokyo', price: 400, stock: 1, isNew: false, categories: ['jumpsuit'], sizes: ['XS','S'], style: 'Party', colors: ['#c9b9a3', '#111111'], image: '/images/tokyo.jpg', bg: '#c9b9a3'},
+  { id: 5, name: 'Dress dubai', price: 500, stock: 10, isNew: true, categories: ['midi', 'satin'], sizes: ['S','M','L','XL','XXL'], style: 'Party', colors: ['#c9b9a3', '#7a1420'], image: '/images/dubai.jpg', bg: '#c9b9a3' },
+  { id: 6, name: 'Dress milano', price: 150, stock: 3, isNew: false, categories: ['mini', 'second'], sizes: ['M','L','XL'], style: 'Knitwear', colors: ['#c9b9a3', '#111111'], image: '/images/milano.jpg', bg: '#c9b9a3'},
   { id: 7, name: 'Dress lisboa', price: 250, stock: 7, isNew: true, categories: ['midi'], sizes: ['XS','S','M','L'], style: 'Basic', colors: ['#7a8067', '#111111'], image: '/images/lisbon.jpg', bg: '#c867bd' },
   { id: 8, name: 'Dress porto', price: 120, stock: 2, isNew: false, categories: ['mini', 'satin', 'second'], sizes: ['S'], style: 'Knitwear', colors: ['#2b0616'], image: '/images/porto.jpg', bg: '#4a3326' },
   { id: 9, name: 'Dress brasilia', price: 200, stock: 5, isNew: false, categories: ['mini', 'satin', 'second'], sizes: ['S'], style: 'Knitwear', colors: ['rgb(49, 32, 61)'], image: '/images/brasilia.jpg', bg: '#4a3326' },
