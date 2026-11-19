@@ -264,7 +264,7 @@ background-color: inherit;
 .grid { display: grid; column-gap: 42px; row-gap: 160px; }
 .grid.view-1 { grid-template-columns: 1fr; max-width: 800px; margin: 0 auto; }
 .grid.view-2 { grid-template-columns: repeat(2, 1fr); }
-.grid.view-3 { grid-template-columns: repeat(4, 1fr); column-gap: 32px; row-gap: 100px; }
+.grid.view-3 { grid-template-columns: repeat(3, 1fr); column-gap: 32px; row-gap: 100px; }
  
 .card-image {
   aspect-ratio: 2 / 3;
