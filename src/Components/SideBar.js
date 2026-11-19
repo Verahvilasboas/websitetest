@@ -96,7 +96,7 @@ export default function Sidebar({
           Filters {activeFilterCount > 0 && `(${activeFilterCount})`}
         </button>
 
-        <button className="link">In store</button>
+       
       </nav>
 
       {/* Escolha de vista: 1 = um vestido grande, 2 = duas colunas, 3 = quatro colunas */}
