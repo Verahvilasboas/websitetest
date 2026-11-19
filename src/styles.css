@@ -22,7 +22,7 @@ Styles · CSS
 }
  
 .home-subtitle {
-  margin: 16px 0 40px;
+  margin: 16px 24px 40px;
   font-size: 14px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -31,6 +31,7 @@ Styles · CSS
 }
  
 .home-button {
+  margin: 24px ;
   padding: 18px 40px;
   border: 1px solid #000;
   color: inherit;
