@@ -20,15 +20,13 @@ export const colorOptions = [
   { name: 'Red', hex: '#e60e0e' },
 ];
 
-
-
 export const sizeOptions = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 
 export const styleOptions = ['Basic', 'Party', 'Knitwear'];
 //colocar apenas nome de cores
 export const dresses = [
-  { id: 1, name: 'Dress paris', price: 100, stock: 8, isNew: true, categories: ['midi', 'satin'], sizes: ['XS','S','M'], style: 'Party', colors: ['Magenta', 'Black'], image: '/images/paris1.jpg', bg: 'black'},
-  { id: 2, name: 'Dress london', price: 200, stock: 2, isNew: false, categories: ['mini'], sizes: ['S','M','L','XL'], style: 'Basic', colors: ['#111111', '#3b3b3b'], image: '/images/london.jpg', bg: '#1d1d1d' },
+  { id: 1, name: 'Dress paris', price: 100, stock: 8, isNew: true, categories: ['midi', 'satin'], sizes: ['XS','S','M'], style: 'Party', colors: ['Black' , 'red'], image: '/images/paris.jpg', bg: 'black'},
+  { id: 2, name: 'Dress london', price: 200, stock: 2, isNew: false, categories: ['mini'], sizes: ['S','M','L','XL'], style: 'Basic', colors: ['#111111', '#898989'], image: '/images/london.jpg', bg: '#1d1d1d' },
   { id: 4, name: 'Dress tokyo', price: 400, stock: 1, isNew: false, categories: ['jumpsuit'], sizes: ['XS','S'], style: 'Party', colors: ['#c9b9a3', '#111111'], image: '/images/tokyo.jpg', bg: '#c9b9a3'},
   { id: 5, name: 'Dress dubai', price: 500, stock: 10, isNew: true, categories: ['midi', 'satin'], sizes: ['S','M','L','XL','XXL'], style: 'Party', colors: ['#c9b9a3', '#7a1420'], image: '/images/dubai.jpg', bg: '#c9b9a3' },
   { id: 6, name: 'Dress milano', price: 150, stock: 3, isNew: false, categories: ['mini', 'second'], sizes: ['M','L','XL'], style: 'Knitwear', colors: ['#c9b9a3', '#111111'], image: '/images/milano.jpg', bg: '#c9b9a3'},
