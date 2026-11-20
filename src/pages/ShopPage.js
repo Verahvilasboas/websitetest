@@ -36,7 +36,7 @@ const emptyFilters = {
 //Olhar para o design e lista tudo aquilo em que se pode clicar ou escrever.
 //Para cada um, perguntar: depois do clique, o que é que tem de ser lembrado?
 //Isso é um estado. O valor inicial é o aspeto da página quando abre.
-//O resto calcula-se com filter, map, find, forEach e companhia.
+//O resto calcula-se com filter, map, find, forEach etc
 
 export default function ShopPage() {
   const [activeCategory, setActiveCategory] = useState('all');
