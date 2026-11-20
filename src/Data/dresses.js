@@ -35,5 +35,5 @@ export const dresses = [
   { id: 9, name: 'Dress brasilia', price: 200, stock: 5, isNew: false, categories: ['mini', 'satin', 'second'], sizes: ['S'], style: 'Knitwear', colors: ['rgb(49, 32, 61)'], image: '/images/brasilia.jpg', bg: '#4a3326' },
   { id: 10, name: 'Dress roma', price: 120, stock: 2, isNew: false, categories: ['mini', 'satin'], sizes: ['S'], style: 'Knitwear', colors: ['#3d2a20'], image: '/images/roma.jpg', bg: '#4a3326' },
   { id: 11, name: 'Dress madrid', price: 500, stock: 2, isNew: false, categories: ['mini', 'satin'], sizes: ['S'], style: 'Knitwear', colors: ['#3d2a20'], image: '/images/madrid.jpg', bg: '#4a3326' },
-  { id: 12, name: 'Dress new york', price: 300, stock: 6, isNew: true, categories: ['midi'], sizes: ['M','L'], style: 'Basic', colors: ['#8a4a1f', '#111111', '#c9b9a3'], image: '/images/new-york.jpg', bg: '#9a5626' },
+  { id: 12, name: 'Dress new york', price: 300, stock: 6, isNew: true, categories: ['midi'], sizes: ['M','L'], style: 'Basic', colors: ['#8a4a1f', '#111111', '#c9b9a3'], image: '/images/newyork.jpg', bg: '#9a5626' },
 ];
