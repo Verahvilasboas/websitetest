@@ -15,6 +15,7 @@ import {
   styleOptions,
   dresses,
 } from '../Data/dresses';
+
 console.log({ Sidebar, TopRight, ProductGrid, FilterPanel });
 
 // map → só os preços; Math.min/max com "..." dá o mais barato e o mais caro
