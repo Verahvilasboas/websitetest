@@ -16,8 +16,7 @@ export default function TopRight({ search, onSearch , userName , bagCount}) {
         <button>
           Bag <span className="bag-count">{bagCount}</span>
         </button>
-
-      
+    
       </div>
     </aside>
   );

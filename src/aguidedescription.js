@@ -8,7 +8,7 @@
 //A estrutura
 //
 //```
-loja-cra/
+lojaDress/
   public/
     index.html
     images/ 
@@ -47,7 +47,7 @@ loja-cra/
 
 
 //“Lifting state up” (traduzido frequentemente como “elevar o estado” ou “promover o estado”) é um padrão em frameworks de interface como o React, Consiste em mover o estado de um componente filho para o componente pai mais próximo em comum.
-
+ver single responsability principle 
 Quando usar
 
 • Dois ou mais componentes irmãos precisam partilhar ou reagir aos mesmos dados.
