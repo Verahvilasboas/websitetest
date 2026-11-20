@@ -15,9 +15,10 @@ export default function Sidebar({
   activeFilterCount,  // quantos filtros estão ativos, para mostrar "Filters (2)"
   filtersOpen,        // true se o painel de filtros está aberto
 }) {
+
   return (
     // <aside> diz ao browser que isto é conteúdo lateral, não o conteúdo principal.
-    // Isso ajuda quem navega por teclado ou voz a saltar diretamente para lá,
+    // Isso ajuda quem navega por teclado ou voz a saltar diretamente para lá, Acessibilidade
     // e os motores de busca percebem o que é a parte principal da página.
     <aside className="sidebar">
   <div className="menu-row">
