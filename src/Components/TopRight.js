@@ -1,6 +1,6 @@
 // Coluna da direita: pesquisa sublinhada, saco, conta e ajuda
 
-export default function TopRight({ search, onSearch, bagCount, userName }) {
+export default function TopRight({ search, onSearch , userName , bagCount}) {
   return (
 //search
     <aside className="top-right">
