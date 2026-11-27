@@ -1,7 +1,16 @@
 import { useState } from 'react';
 
+
 // Cartão de um vestido: foto, etiqueta, nome, preço, cores e botão "+"
-export default function ProductCard({ dress, stockLeft, onAdd }) {
+
+const getHex = (name, colorOptions) => {
+const color = colorOptions.find((c) => c.name === name);
+return color ? color.hex : "#cccccc"; 
+
+};
+
+
+export default function ProductCard({ dress, stockLeft, onAdd, colorOptions }) {
   // se a foto não existir, mostramos o bloco de cor
   const [imageFailed, setImageFailed] = useState(false);
 
@@ -39,7 +48,7 @@ export default function ProductCard({ dress, stockLeft, onAdd }) {
       {dress.colors.length > 1 && (
         <div className="swatches">
           {dress.colors.map((color) => (
-            <span key={color} style={{ background: color }} />
+<span key={color} style={{ background: getHex(color, colorOptions) }} />
           ))}
         </div>
       )}

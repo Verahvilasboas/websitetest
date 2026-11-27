@@ -1,23 +1,62 @@
 //O ShopPage.js é o cérebro da página. Guarda o estado, calcula que vestidos mostrar e 
 //passa tudo aos componentes que desenham o ecrã.
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Sidebar from '../Components/SideBar';
 import TopRight from '../Components/TopRight';
 import ProductGrid from '../Components/ProductGrid';
 import FilterPanel from '../Components/FilterPanel';
 
-import {
-  categories,
-  colorOptions,
-  sizeOptions,
-  styleOptions,
-  dresses,
-} from '../Data/dresses';
 
-console.log({ Sidebar, TopRight, ProductGrid, FilterPanel });
 
+// método para qualquer projeto
+//Olhar para o design e lista tudo aquilo em que se pode clicar ou escrever.
+//Para cada um, perguntar: depois do clique, o que é que tem de ser lembrado?
+//Isso é um estado. O valor inicial é o aspeto da página quando abre.
+//O resto calcula-se com filter, map, find, forEach etc
+
+
+//O endereço da API fica guardado num só sítio. Se um dia a API mudar de endereço, mudar só aqui.
+const API_URL = 'http://localhost:4000';
+
+//Dois estados: data guarda os dados quando chegarem e error guarda uma mensagem se algo falhar. Começam a null, ou seja, "ainda não há nada".
+export default function ShopPage() {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+//Corre o código lá dentro uma vez, quando a página abre. O [] no fim quer dizer "só uma vez".
+
+  useEffect(() => {
+
+    Promise.all([
+//Faz os 5 pedidos ao mesmo tempo e só continua quando todos chegarem.
+      fetch(`${API_URL}/categories`).then((res) => res.json()),
+////Pede os vestidos à API. Quando a resposta chega, o res.json() transforma o texto JSON de volta em objeto JavaScript.
+// É o contrário do JSON.stringify que usasmos no servidor.
+
+      fetch(`${API_URL}/colorOptions`).then((res) => res.json()),
+      fetch(`${API_URL}/sizeOptions`).then((res) => res.json()),
+      fetch(`${API_URL}/styleOptions`).then((res) => res.json()),
+      fetch(`${API_URL}/dresses`).then((res) => res.json()),
+    ])
+      .then(([categories, colorOptions, sizeOptions, styleOptions, dresses]) => {
+        setData({ categories, colorOptions, sizeOptions, styleOptions, dresses });
+      })
+
+//Recebe as 5 respostas pela mesma ordem dos pedidos e guarda-as no estado data.js
+
+      .catch(() => setError('Não foi possível carregar os vestidos.'));
+  }, []);
+//Se algum pedido falhar (por exemplo, a API está desligada), guarda a mensagem de erro.
+
+  if (error) return <p>{error}</p>;
+  if (!data) return <p>A carregar...</p>;
+//Decide o que mostrar: se houve erro, mostra o erro; se os dados ainda não chegaram, mostra "A carregar..."; 
+//se já chegaram, mostra a loja e passa-lhe os 5 arrays.
+  return <ShopContent {...data} />;
+}
+function ShopContent({categories, colorOptions, sizeOptions,styleOptions, dresses}) { 
 // map → só os preços; Math.min/max com "..." dá o mais barato e o mais caro
 const prices = dresses.map((d) => d.price);
 const MIN_PRICE = Math.min(...prices);
@@ -31,14 +70,6 @@ const emptyFilters = {
   priceMin: MIN_PRICE,
   priceMax: MAX_PRICE,
 };
-
-// método para qualquer projeto
-//Olhar para o design e lista tudo aquilo em que se pode clicar ou escrever.
-//Para cada um, perguntar: depois do clique, o que é que tem de ser lembrado?
-//Isso é um estado. O valor inicial é o aspeto da página quando abre.
-//O resto calcula-se com filter, map, find, forEach etc
-
-export default function ShopPage() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [search, setSearch] = useState('');
   const [view, setView] = useState(3);
@@ -121,6 +152,7 @@ export default function ShopPage() {
           view={view}
           getStockLeft={getStockLeft}
           onAdd={addToBag}
+          colorOptions={colorOptions}
         />
       </main>
 
