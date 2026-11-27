@@ -1,5 +1,5 @@
 
-0// Categorias do menu
+// Categorias do menu
 const categories = [
   { id: 'all', label: 'View all' },
   { id: 'midi', label: 'Midi | Maxi' },
@@ -11,7 +11,7 @@ const categories = [
 
 //1. paleta de cores
 
-const ColorOptions = [
+const colorOptions = [
  { name: 'Beige', hex: '#c9b9a3' },
   { name: 'Black', hex: '#111111' },
   { name: 'Brown', hex: '#8a4a1f' },
