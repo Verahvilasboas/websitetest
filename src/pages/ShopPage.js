@@ -1,23 +1,50 @@
 //O ShopPage.js é o cérebro da página. Guarda o estado, calcula que vestidos mostrar e 
 //passa tudo aos componentes que desenham o ecrã.
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Sidebar from '../Components/SideBar';
 import TopRight from '../Components/TopRight';
 import ProductGrid from '../Components/ProductGrid';
 import FilterPanel from '../Components/FilterPanel';
 
-import {
-  categories,
-  colorOptions,
-  sizeOptions,
-  styleOptions,
-  dresses,
-} from '../Data/dresses';
 
-console.log({ Sidebar, TopRight, ProductGrid, FilterPanel });
 
+
+
+
+// método para qualquer projeto
+//Olhar para o design e lista tudo aquilo em que se pode clicar ou escrever.
+//Para cada um, perguntar: depois do clique, o que é que tem de ser lembrado?
+//Isso é um estado. O valor inicial é o aspeto da página quando abre.
+//O resto calcula-se com filter, map, find, forEach etc
+
+const API_URL = 'http://localhost:4000';
+
+export default function ShopPage() {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    Promise.all([
+      fetch(`${API_URL}/categories`).then((res) => res.json()),
+      fetch(`${API_URL}/colorOptions`).then((res) => res.json()),
+      fetch(`${API_URL}/sizeOptions`).then((res) => res.json()),
+      fetch(`${API_URL}/styleOptions`).then((res) => res.json()),
+      fetch(`${API_URL}/dresses`).then((res) => res.json()),
+    ])
+      .then(([categories, colorOptions, sizeOptions, styleOptions, dresses]) => {
+        setData({ categories, colorOptions, sizeOptions, styleOptions, dresses });
+      })
+      .catch(() => setError('Não foi possível carregar os vestidos.'));
+  }, []);
+
+  if (error) return <p>{error}</p>;
+  if (!data) return <p>A carregar...</p>;
+
+  return <ShopContent {...data} />;
+}
+function ShopContent({categories, colorOptions, sizeOptions,styleOptions, dresses}) { 
 // map → só os preços; Math.min/max com "..." dá o mais barato e o mais caro
 const prices = dresses.map((d) => d.price);
 const MIN_PRICE = Math.min(...prices);
@@ -31,14 +58,6 @@ const emptyFilters = {
   priceMin: MIN_PRICE,
   priceMax: MAX_PRICE,
 };
-
-// método para qualquer projeto
-//Olhar para o design e lista tudo aquilo em que se pode clicar ou escrever.
-//Para cada um, perguntar: depois do clique, o que é que tem de ser lembrado?
-//Isso é um estado. O valor inicial é o aspeto da página quando abre.
-//O resto calcula-se com filter, map, find, forEach etc
-
-export default function ShopPage() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [search, setSearch] = useState('');
   const [view, setView] = useState(3);

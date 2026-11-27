@@ -161,8 +161,10 @@ Next: descobrir onde o dresses.js é usado
 No VS Code, carregar Cmd + Shift + F para pesquisar em todos os ficheiros.
 Escrever: Data/dresses
 Aparece a lista de ficheiros que fazem import ... from '../Data/dresses' 
+alerterar na pagina isto: 
+import { useState, useEffect } from 'react'; poruqe o usseEffect vai ser responsavel por chamar a API
 
 
-
+DEPOIS APAGAR O IMPORT DOS DADOS
 
 */
