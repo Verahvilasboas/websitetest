@@ -165,6 +165,73 @@ alerterar na pagina isto:
 import { useState, useEffect } from 'react'; poruqe o usseEffect vai ser responsavel por chamar a API
 
 
-DEPOIS APAGAR O IMPORT DOS DADOS
+DEPOIS APAGAR O IMPORT DOS DADOS e apagar os consol.logs,
+
+ fazer cmd, x, para cortar o bloco de codgo dos calculos dos precos dos vestidos, // map → só os preços; Math.min/max com "..." dá o mais barato e o mais caro
+const prices = dresses.map((d) => d.price);
+const MIN_PRICE = Math.min(...prices);
+const MAX_PRICE = Math.max(...prices);
+
+const emptyFilters = {
+  sortBy: 'none',
+  colors: [],
+  sizes: [],
+  styles: [],
+  priceMin: MIN_PRICE,
+  priceMax: MAX_PRICE,
+};
+
+
+ele tem de sair porque agora vai passar a existir dentro do componente depois de chegar da api, 
+
+e depois na funcao do. shopPage , mudar para shop content deixa de ser export default function porque deixa de ser o componente principla da pagina e mudamos para o apenas shopContent, usamos dentro das chavetar ({}) sao as props -> os 5 arrays que chegam vindos da Api 
+
+
+mas temos de criar a nova export default function para shoPage 
+
+const API_URL = 'http://localhost:4000';
+
+export default function ShopPage() {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    Promise.all([
+      fetch(`${API_URL}/categories`).then((res) => res.json()),
+      fetch(`${API_URL}/colorOptions`).then((res) => res.json()),
+      fetch(`${API_URL}/sizeOptions`).then((res) => res.json()),
+      fetch(`${API_URL}/styleOptions`).then((res) => res.json()),
+      fetch(`${API_URL}/dresses`).then((res) => res.json()),
+    ])
+      .then(([categories, colorOptions, sizeOptions, styleOptions, dresses]) => {
+        setData({ categories, colorOptions, sizeOptions, styleOptions, dresses });
+      })
+      .catch(() => setError('Não foi possível carregar os vestidos.'));
+  }, []);
+
+  if (error) return <p>{error}</p>;
+  if (!data) return <p>A carregar...</p>;
+
+  return <ShopContent {...data} />;
+}
+
+Testar
+
+Terminal 1 (em API %): node server.js a correr.
+Terminal 2 (em websitetest %): npm start.
+Abre a página da loja no browser.
+
+
+visto q mudamos as cores por nomes convem ir ao painel d filtros alterar o color.map, para color.name.
+nao alterar na parte 
+className="swatch" style={{ background: color.hex }} /> convem manter como esta a bolinha assumir a cor referencia
+
+temoa de alteraer tamb no card visto q este swatch os tais bolinhas de cor poderao nao aparecer em alguns vestidos,
+
+Antes, color era um hex ('#111111'). Agora é um nome ('Wine'), e o CSS não conhece Wine nem Burgundy. Por isso algumas bolinhas aparecem vazias ou com a cor errada. É aqui que entra o getHex.
+
+O problema é que o ProductCard não tem o colorOptions. Ele está no ShopContent, por isso temos de o passar por props ao longo do caminho:
+
+dpeois de colocar o codigo ainda tempo de ir ao product grid alterar o nome para colorOptions para o find do card ir buscar a info ao passar por todos os componentes
 
 */

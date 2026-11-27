@@ -88,8 +88,8 @@ export default function FilterPanel({
               {visibleColors.map((color) => (
                 <button
                   key={color.hex}
-                  className={filters.colors.includes(color.hex) ? 'f-item f-color active' : 'f-item f-color'}
-                  onClick={() => toggle('colors', color.hex)}
+                  className={filters.colors.includes(color.name) ? 'f-item f-color active' : 'f-item f-color'}
+                  onClick={() => toggle('colors', color.name)}
                 >
                   <span className="swatch" style={{ background: color.hex }} />
                   {color.name}
